@@ -1,3 +1,20 @@
+.profile {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-flow: column;
+}
+
+img {
+  max-width: 40%;
+}
+
 h1 {
-  color: green;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #302727;
+  font-family: sans-serif;
+  font-size: 40px;
 }
