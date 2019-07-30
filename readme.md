@@ -19,3 +19,34 @@ online прогрузка контента отсюда
 ### overlay
 
 вывод ошибок в экран браузера, а не в консоль
+
+## additional
+
+1 When you create **.babelrc** and added
+
+```json
+{
+  "plugins": ["transform-es2015-arrow-functions"]
+}
+```
+
+2 in main.js
+
+```js
+const a = () => console.log("---");
+```
+
+3 then **npm install babel-cli -g**
+after that we run in cli
+
+```bash
+babel src/main.js
+```
+
+and babel will returned this
+
+```js
+// const a = function () {
+//   return console.log("---");
+// };
+```
