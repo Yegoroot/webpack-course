@@ -22,6 +22,8 @@ online прогрузка контента отсюда
 
 ## additional
 
+### babel plugins
+
 1 When you create **.babelrc** and added
 
 ```json
@@ -50,3 +52,7 @@ and babel will returned this
 //   return console.log("---");
 // };
 ```
+
+### babel presets
+
+выполняет роль многих плагинов (чтоб не прописывать для async, arrow func и тд). Подкюлючает много плагинов при загрузеи сервера можно увидить - Using plugins: /n ....

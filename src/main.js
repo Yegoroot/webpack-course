@@ -1,3 +1,4 @@
+require("babel-runtime/regenerator");
 require("./main.css");
 require("./index.html");
 console.log("heeey1");
@@ -22,3 +23,17 @@ async function asyncFunc(name) {
 }
 
 asyncFunc("_one");
+
+/** regeneration
+ *
+ */
+
+function regeneration(args) {
+  const { a, b } = args;
+  console.log(a, b);
+}
+
+regeneration({
+  a: 1,
+  b: "str"
+});
