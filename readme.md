@@ -56,3 +56,7 @@ and babel will returned this
 ### babel presets
 
 выполняет роль многих плагинов (чтоб не прописывать для async, arrow func и тд). Подкюлючает много плагинов при загрузеи сервера можно увидить - Using plugins: /n ....
+
+## devMiddleware
+
+когда express воспроизводит статические файлы, то для production это норм, но когда нам нужно на development обновлять информацию для этого и подходит **devMiddleware**
