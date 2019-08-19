@@ -4,7 +4,7 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
-    index: ["./src/index.js"]
+    index: ["react-hot-loader/patch", "./src/index.js"]
   },
   mode: "development",
   output: {
