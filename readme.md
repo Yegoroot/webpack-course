@@ -70,7 +70,8 @@ check new branch "express-server"
 
 ### - nodemov
 
-добавили nodemon для просмотра изминений не только вебпака но и index.html, так как после middleware-hot-reloader перестал следить за изминениями
+для обновления серверного и клиентского кода
+(в частности) для просмотра изминений не только вебпака но и index.html, так как после middleware-hot-reloader перестал следить за изминениями
 и для этого мы добавляем **html-webpack-plugin**
 
 ### - html-webpack-plugin
