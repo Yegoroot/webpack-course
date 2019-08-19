@@ -19,7 +19,14 @@ const webpackDevMiddleware = require("webpack-dev-middleware")(
   compiler,
   config.devServer // webpack.config is object
 );
+
+/**
+ * webpack-hot-middleware
+ */
+const webpackHotMiddleware = require("webpack-hot-middleware")(compiler);
+
 server.use(webpackDevMiddleware);
+server.use(webpackHotMiddleware);
 
 /**
  * we specify express where working files was lie
