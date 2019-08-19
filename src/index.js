@@ -1,5 +1,5 @@
 require("babel-runtime/regenerator");
-require("./main.css");
+require("./index.css");
 require("./index.html");
 console.log("heeey1");
 
