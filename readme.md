@@ -65,3 +65,14 @@ and babel will returned this
 ## express
 
 check new branch "express-server"
+
+## hot reload html
+
+### - nodemov
+
+добавили nodemon для просмотра изминений не только вебпака но и index.html, так как после middleware-hot-reloader перестал следить за изминениями
+и для этого мы добавляем **html-webpack-plugin**
+
+### - html-webpack-plugin
+
+### - added "?reload=true" in require("webpack-hot-middleware/client?reload=true");
