@@ -32,21 +32,30 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          {
-            loader: "style-loader" // loader include
-          },
-          {
-            loader: "css-loader"
-          }
+          { loader: "style-loader" }, // loader include
+          { loader: "css-loader" }
+        ]
+      },
+      {
+        test: /\.sass$/,
+        use: [
+          { loader: "style-loader" }, // loader include
+          { loader: "css-loader" },
+          { loader: "sass-loader" }
+        ]
+      },
+      {
+        test: /\.styl$/,
+        use: [
+          { loader: "style-loader" }, // loader include
+          { loader: "css-loader" },
+          { loader: "postcss-loader" },
+          { loader: "stylus-loader" }
         ]
       },
       {
         test: /\.html$/,
-        use: [
-          {
-            loader: "html-loader"
-          }
-        ]
+        use: [{ loader: "html-loader" }]
       },
       {
         test: /\.(jpg|gif|png)$/,
