@@ -29,28 +29,23 @@ module.exports = {
         ],
         exclude: /node_modules/
       },
+      // {
+      //   test: /\.css$/,
+      //   use: [
+      //     { loader: "style-loader" }, // loader include
+      //     { loader: "css-loader" }
+      //   ]
+      // },
       {
-        test: /\.css$/,
-        use: [
-          { loader: "style-loader" }, // loader include
-          { loader: "css-loader" }
-        ]
-      },
-      {
-        test: /\.sass$/,
-        use: [
-          { loader: "style-loader" }, // loader include
-          { loader: "css-loader" },
-          { loader: "sass-loader" }
-        ]
-      },
-      {
-        test: /\.styl$/,
+        test: /\.(css|styl|pcss)$/,
         use: [
           { loader: "style-loader" }, // loader include
           { loader: "css-loader" },
-          // { loader: "postcss-loader" },
-          { loader: "stylus-loader" }
+          { loader: "stylus-loader" },
+            {
+              loader: "postcss-loader",
+              options: {config: {path: './config/postcss.config.js'}}
+            },
         ]
       },
       {
