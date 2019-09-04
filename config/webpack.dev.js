@@ -24,7 +24,7 @@ module.exports = {
         test: /\.js$/,
         use: [
           {
-            loader: "babel-loader"
+            loader: "babel-loader" 
           }
         ],
         exclude: /node_modules/
@@ -33,7 +33,11 @@ module.exports = {
       //   test: /\.css$/,
       //   use: [
       //     { loader: "style-loader" }, // loader include
-      //     { loader: "css-loader" }
+      //     { loader: "css-loader" },
+      //     {
+      //       loader: "postcss-loader",
+      //       options: {config: {path: './config/postcss.config.js'}}
+      //     },
       //   ]
       // },
       {
@@ -42,10 +46,10 @@ module.exports = {
           { loader: "style-loader" }, // loader include
           { loader: "css-loader" },
           { loader: "stylus-loader" },
-            {
-              loader: "postcss-loader",
-              options: {config: {path: './config/postcss.config.js'}}
-            },
+          {
+            loader: "postcss-loader",
+            options: {config: {path: './config/postcss.config.js'}}
+          },
         ]
       },
       {
