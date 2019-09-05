@@ -18,8 +18,15 @@ module.exports = {
     hot: true
   },
   devtool: "source-map",
+  // devtool: 'inline-source-map',
   module: {
     rules: [
+
+      {
+        test: /\.ts(x?)$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
+      },
       {
         test: /\.js$/,
         use: [
@@ -69,11 +76,18 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    extensions: [ '.tsx', '.ts', '.js' ]
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HTMLWebpackPlugin({
       template: "./src/index.html"
       // inject: false // не добавлять script тег
     })
-  ]
+  ],
+  // externals: {
+  //   "react": "React",
+  //   "react-dom": "ReactDOM"
+  // }
 };

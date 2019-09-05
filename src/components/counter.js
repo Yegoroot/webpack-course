@@ -1,5 +1,5 @@
 import React from "react";
-import Counter2 from "./counter2";
+import Counter2 from "./counter2.tsx";
 
 export default class extends React.Component {
   constructor(props) {
@@ -18,7 +18,7 @@ export default class extends React.Component {
     return (
       <div>
         <h1 onClick={() => this.climb()}> Counting {this.state.count} </h1>
-        <Counter2 cc={this.state.count} />
+        <Counter2 title="Title For TypeScript" />
       </div>
     );
   }
