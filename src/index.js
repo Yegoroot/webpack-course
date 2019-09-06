@@ -1,6 +1,6 @@
-require("webpack-hot-middleware/client?reload=true");
-require("babel-runtime/regenerator");
-require("babel-register");
+// require("webpack-hot-middleware/client?reload=true");
+// require("babel-runtime/regenerator");
+// require("babel-register"); // это не было включено в конфиг
 require("./style/index.styl");
 require("./index.html");
 
