@@ -24,7 +24,7 @@ online прогрузка контента отсюда
 
 ### babel plugins
 
-1 When you create **.babelrc** and added
+1 Сreate **.babelrc** and added
 
 ```json
 {
@@ -32,14 +32,13 @@ online прогрузка контента отсюда
 }
 ```
 
-2 in main.js
+2 теперь main.js можно использовать arrow function
 
 ```js
 const a = () => console.log("---");
 ```
 
-3 then **npm install babel-cli -g**
-after that we run in cli
+3 но сначала запустим main.js через **npm install babel-cli -g**
 
 ```bash
 babel src/main.js
@@ -48,9 +47,9 @@ babel src/main.js
 and babel will returned this
 
 ```js
-// const a = function () {
-//   return console.log("---");
-// };
+const a = function() {
+  return console.log("---");
+};
 ```
 
 ### babel presets
@@ -86,3 +85,27 @@ check new branch "express-server"
 - **"build:prod"**: build проекта "webpack --config config/webpack.prod.js",
 - **"server:dev"**: запуск сервера для разработки (работает с виртуальными файлами, поэтому build не нужен) "nodemon --inspect --watch config --watch src/server src/server/main.js",
 - **"server:prod"**: запуск сервера на проде (работает с файлами dist, иначе не работает) "cross-env NODE_ENV=production nodemon --inspect --watch config --watch src/server src/server/main.js"
+
+### - webpack.DefinePlugin
+
+```js
+// webpack.config
+new webpack.DefinePlugin({
+  "process.env": {
+    NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+  }
+});
+```
+
+```json
+// package.json
+ "server:prod": "cross-env NODE_ENV=production nodemon --inspect --watch config --watch src/server src/server/main.js"
+```
+
+таким образом можно получить значение в файлах нашего проекта например в App.js
+
+```js
+if (process.env.NODE_ENV === "production") {
+  /* ... */
+}
+```
