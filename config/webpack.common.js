@@ -52,6 +52,12 @@ module.exports = {
         use: [{ loader: "html-loader" }]
       },
       {
+        test: /\.md$/,
+        use: [
+          {loader: "html-loader"},
+        ]
+      },
+      {
         test: /\.(jpg|gif|png)$/,
         use: [
           {
