@@ -77,3 +77,12 @@ check new branch "express-server"
 ### - html-webpack-plugin
 
 ### - added "?reload=true" in require("webpack-hot-middleware/client?reload=true");
+
+## package.json script
+
+- **"clean"**: очистка папки "rm -rf node_modules/",
+- **"start"**: запуск webpack сервера (old) "webpack-dev-server --open --config config/webpack.dev.js",
+- **"build"**: build (map, etc) "webpack --config config/webpack.dev.js",
+- **"build:prod"**: build проекта "webpack --config config/webpack.prod.js",
+- **"server:dev"**: запуск сервера для разработки (работает с виртуальными файлами, поэтому build не нужен) "nodemon --inspect --watch config --watch src/server src/server/main.js",
+- **"server:prod"**: запуск сервера на проде (работает с файлами dist, иначе не работает) "cross-env NODE_ENV=production nodemon --inspect --watch config --watch src/server src/server/main.js"

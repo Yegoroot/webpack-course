@@ -74,5 +74,8 @@ module.exports = {
       template: "./src/index.html",
       hash: true
     }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    })
   ],
 };

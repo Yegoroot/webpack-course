@@ -18,7 +18,7 @@ export default class extends React.Component {
     return (
       <div>
         <h1 onClick={() => this.climb()}> Counting {this.state.count} </h1>
-        <Counter2 title="Title For TypeScript" />
+        <Counter2 title="Title For TypeScripT" />
       </div>
     );
   }

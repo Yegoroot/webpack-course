@@ -10,7 +10,7 @@ export default function StandardComponent({ title }: StandardComponentProps) {
   // const greetingVar = greeting(1221);
   return (
     <div>
-      {title} - {greetingVar} 
+      {title} - {greetingVar}
     </div>
   );
 }
