@@ -20,7 +20,7 @@ online прогрузка контента отсюда
 
 вывод ошибок в экран браузера, а не в консоль
 
-## additional
+## Babel
 
 ### babel plugins
 
@@ -55,6 +55,13 @@ const a = function() {
 ### babel presets
 
 выполняет роль многих плагинов (чтоб не прописывать для async, arrow func и тд). Подкюлючает много плагинов при загрузеи сервера можно увидить - Using plugins: /n ....
+
+### babel-preset-minify (is the same uglifyJSPlugin)
+
+Для минификации (например длинные названия переменных в короткие)
+
+- https://babeljs.io/docs/en/babel-preset-minify (это в общем для скриптов)
+  а конкртено для webpack исопльзуем babel-minify-webpack-plugin
 
 ## devMiddleware
 
