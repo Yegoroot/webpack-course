@@ -74,8 +74,10 @@ module.exports = {
       template: "./src/index.html",
       hash: true
     }),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-    })
+    // new webpack.EnvironmentPlugin(['NODE_ENV'])
+    // new webpack.DefinePlugin({
+    //   'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+    //   "ANYTH": JSON.stringify(process.env.ANYTHING)
+    // })
   ],
 };
