@@ -1,14 +1,17 @@
 const path = require("path");
 const webpack = require("webpack");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+  .BundleAnalyzerPlugin;
 
 module.exports = {
   entry: {
     index: [
-      "babel-runtime/regenerator", 
-      "webpack-hot-middleware/client?reload=true", 
-      "react-hot-loader/patch", "./src/index.js"
+      "babel-runtime/regenerator",
+      "webpack-hot-middleware/client?reload=true",
+      "react-hot-loader/patch",
+      "./src/index.js"
     ]
   },
   output: {
@@ -16,20 +19,23 @@ module.exports = {
     path: path.resolve(__dirname, "../dist"),
     publicPath: "/"
   },
-
+  optimization: {
+    splitChunks: {
+      chunks: "all"
+    }
+  },
   module: {
     rules: [
-
       {
         test: /\.ts(x?)$/,
-        use: 'ts-loader',
+        use: "ts-loader",
         exclude: /node_modules/
       },
       {
         test: /\.js$/,
         use: [
           {
-            loader: "babel-loader" 
+            loader: "babel-loader"
           }
         ],
         exclude: /node_modules/
@@ -43,8 +49,8 @@ module.exports = {
           { loader: "stylus-loader" },
           {
             loader: "postcss-loader",
-            options: {config: {path: './config/postcss.config.js'}}
-          },
+            options: { config: { path: "./config/postcss.config.js" } }
+          }
         ]
       },
       {
@@ -65,7 +71,7 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ]
+    extensions: [".tsx", ".ts", ".js"]
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -76,9 +82,12 @@ module.exports = {
     }),
     // new webpack.EnvironmentPlugin(['NODE_ENV'])
     new webpack.DefinePlugin({
-      'process.env': {
+      "process.env": {
         NODE_ENV: JSON.stringify(process.env.NODE_ENV)
       }
+    }),
+    new BundleAnalyzerPlugin({
+      generateStatsFile: true
     })
-  ],
+  ]
 };
